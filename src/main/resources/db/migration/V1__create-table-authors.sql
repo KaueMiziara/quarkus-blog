@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS authors (
+    id UUID PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    bio VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX idx_authors_email ON authors(email);
+
+CREATE INDEX idx_authors_name ON authors(name);
